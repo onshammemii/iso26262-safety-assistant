@@ -5,7 +5,7 @@ import time
 # Page configuration
 st.set_page_config(
     page_title="ISO 26262 Safety Assistant",
-    page_icon="🚗",
+    
     layout="wide"
 )
 
@@ -22,12 +22,12 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Header
-st.title("🚗 ISO 26262 Functional Safety Assistant")
-st.markdown("---")
+st.title("ISO 26262 Functional Safety Assistant")
+st.markdown("This AI assistant helps you understand **ISO 26262** Functional Safety standards.")
 
 # Sidebar
 with st.sidebar:
-    st.header("ℹ️ About")
+    st.header("About")
     st.markdown("""
     This AI assistant helps you understand **ISO 26262** Functional Safety standards.
 
@@ -36,10 +36,7 @@ with st.sidebar:
     - Understand safety concepts
     - Get answers with source citations
 
-    **Powered by:**
-    - 🤖 Groq LLaMA 3.1
-    - 📚 12 ISO 26262 PDFs (808 pages)
-    - 🔍 RAG (Retrieval-Augmented Generation)
+ 
     """)
 
     st.markdown("---")
@@ -60,7 +57,7 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
         if "sources" in message:
-            with st.expander("📚 View Sources"):
+            with st.expander("View Sources"):
                 for i, source in enumerate(message["sources"], 1):
                     st.markdown(f"**{i}.** {source}")
 
@@ -73,7 +70,7 @@ if prompt := st.chat_input("Ask a question about ISO 26262..."):
 
     # Get AI response
     with st.chat_message("assistant"):
-        with st.spinner("🔍 Searching ISO 26262 documents..."):
+        with st.spinner("Searching ISO 26262 documents..."):
             try:
                 response = query_rag(prompt)
                 answer = response["answer"]
@@ -90,7 +87,7 @@ if prompt := st.chat_input("Ask a question about ISO 26262..."):
                     source_list.append(f"{source_file} (page {source_page})")
 
                 # Display sources in expander
-                with st.expander("📚 View Sources"):
+                with st.expander("View Sources"):
                     for i, source in enumerate(source_list, 1):
                         st.markdown(f"**{i}.** {source}")
 
@@ -108,13 +105,13 @@ if prompt := st.chat_input("Ask a question about ISO 26262..."):
 # Clear chat button in sidebar
 with st.sidebar:
     st.markdown("---")
-    if st.button("🗑️ Clear Chat History"):
+    if st.button("Clear Chat History"):
         st.session_state.messages = []
         st.rerun()
 
 # Footer
 st.markdown("---")
 st.markdown(
-    "<p style='text-align: center; color: gray;'>Built with ❤️ using LangChain, Groq, and Streamlit</p>",
+    "",
     unsafe_allow_html=True
 )
