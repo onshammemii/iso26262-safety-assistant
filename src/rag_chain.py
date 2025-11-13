@@ -1,7 +1,7 @@
 from langchain_classic.chains.retrieval_qa.base import RetrievalQA
 from langchain_core.prompts import PromptTemplate
 
-from src.vector_store import load_vector_store
+from vector_store import load_vector_store
 from dotenv import load_dotenv
 
 load_dotenv()
