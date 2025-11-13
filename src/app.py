@@ -1,5 +1,5 @@
 import streamlit as st
-from src.rag_chain import query_rag
+from rag_chain import query_rag
 import time
 
 # Page configuration
