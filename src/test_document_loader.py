@@ -1,4 +1,4 @@
-from src.document_loader import load_and_split_pdfs
+from document_loader import load_and_split_pdfs
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
