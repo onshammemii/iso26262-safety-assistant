@@ -13,14 +13,14 @@ from vector_store import create_vector_store
 
 def main():
     # Step 1: Load and split PDFs
-    print("🔹 Loading and splitting PDFs...")
-    chunks = load_and_split_pdfs("data/raw/")
-    print(f"✅ Loaded {len(chunks)} chunks.")
+    #print("🔹 Loading and splitting PDFs...")
+    #chunks = load_and_split_pdfs("data/raw/")
+    #print(f"✅ Loaded {len(chunks)} chunks.")
 
     # Step 2: Create vector store
-    print("🔹 Creating vector store...")
-    vector_store = create_vector_store(chunks)
-    print("✅ Vector store created.")
+    #print("🔹 Creating vector store...")
+    #vector_store = create_vector_store(chunks)
+    #print("✅ Vector store created.")
 
     # Step 3: Test similarity search
     query = "What is ASIL level?"
@@ -34,7 +34,6 @@ def main():
     else:
         print("⚠️ No results found.")
 
-"""o use it run `pip install -U `langchain-huggingface` and import as `from `langchain_huggingface import HuggingFaceEmbeddings``."""
 
 
 if __name__ == "__main__":
